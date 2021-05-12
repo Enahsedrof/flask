@@ -22,3 +22,5 @@ def update(name):
     first_game.name = name
     db.session.commit()
     return first_game.name
+
+    
