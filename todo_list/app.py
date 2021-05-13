@@ -34,7 +34,7 @@ def add():
         return redirect(url_for("index"))
     return render_template("add.html", form=form)
 
-@app.route("/update/<int:todo_id>")
+@app.route("/update/<int:todo_id>", methods=["POST","GET"])
 def update(todo_id):
     todo = Todo.query.filter_by(id=todo_id).first()
     todo.complete = not todo.complete
